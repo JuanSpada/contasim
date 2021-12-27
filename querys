@@ -1,0 +1,28 @@
+LOGIN
+query {
+    login(email: "juan@wemanagement.com.ar",password: "Parcero2019"){
+      userId
+      token
+      tokenExpiration
+    }
+}
+GET CUSTOMERS
+query {
+  customers {
+    _id
+    phone
+    address
+    soruce
+    creator {
+      email
+      _id
+    }
+  }
+}
+
+CREATE CUSTOMER // SOLO POSTMAN POR Q NECESITAMOS HEADERS
+mutation {
+  createCustomer(customerInput:{name:"Juan Spada", phone:"1139342713", email: "spadajuan94@gmial.com"}){
+    email
+  }
+}
